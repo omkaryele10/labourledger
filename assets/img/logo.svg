@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LabourLedger logo">
+  <rect width="64" height="64" rx="14" fill="#102A43"/>
+  <path d="M18 15h23a5 5 0 0 1 5 5v29H23a5 5 0 0 1-5-5V15Z" fill="none" stroke="#F7F4EC" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M25 24h14M25 30h14M25 36h8" stroke="#B0833C" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M35 43l4 4 9-11" fill="none" stroke="#E9C77E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

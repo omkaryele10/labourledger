@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LabourLedger — Client audits</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#102A43">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body class="app-body">
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" aria-label="Workspace navigation">
+      <a class="brand" href="/" aria-label="LabourLedger home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="currentColor"/><path d="M18 15h23a5 5 0 0 1 5 5v29H23a5 5 0 0 1-5-5V15Z" fill="none" stroke="#F7F4EC" stroke-width="3" stroke-linejoin="round"/><path d="M25 24h14M25 30h14M25 36h8" stroke="#B0833C" stroke-width="3.2" stroke-linecap="round"/><path d="M35 43l4 4 9-11" fill="none" stroke="#E9C77E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        LabourLedger
+      </a>
+
+      <div class="sidebar-label">Workspace</div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="/app/" data-nav="audits">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5Z" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Client audits
+          <span class="nav-count" id="navAuditCount">0</span>
+        </a>
+        <button class="nav-item" type="button" data-action="new-audit">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          New audit
+        </button>
+        <a class="nav-item" href="/app/?view=settings" data-nav="settings">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" stroke="currentColor" stroke-width="1.6"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 0 0-1.7-1L14.5 3h-5L9 6.1a7 7 0 0 0-1.7 1l-2.3-1-2 3.4 2 1.5a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 1.7 1L9 21h5l1.4-3.1a7 7 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5c.1-.3.1-.7.1-1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-plan">
+          <div class="plan-label">Your plan</div>
+          <div class="plan-value" id="sidebarPlan">Free pilot</div>
+          <div class="plan-note" id="sidebarPlanNote">3 audits included</div>
+          <button class="btn btn-brass btn-sm" type="button" data-action="open-plan">Upgrade</button>
+        </div>
+        <div class="sidebar-user">
+          <div class="avatar" id="sidebarAvatar">LL</div>
+          <div style="min-width:0;">
+            <div class="sidebar-user-name" id="sidebarFirm">Add your firm</div>
+            <div class="sidebar-user-role" id="sidebarRole">CA / HR practice</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" data-action="close-menu"></div>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" type="button" data-action="open-menu" aria-label="Open menu">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+          <div>
+            <div class="topbar-kicker" id="topbarKicker">Workspace</div>
+            <div class="topbar-title" id="topbarTitle">Client audits</div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <span class="badge" id="topbarPlan">Free pilot</span>
+          <button class="btn btn-primary btn-sm" type="button" data-action="new-audit">+ New audit</button>
+        </div>
+      </header>
+
+      <main class="app-content" id="appMain"></main>
+    </div>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div class="toast-wrap" id="toastRoot" aria-live="polite"></div>
+
+  <script src="/assets/vendor/jspdf.umd.min.js"></script>
+  <script type="module" src="/assets/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

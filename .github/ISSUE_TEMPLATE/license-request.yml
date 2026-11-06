@@ -1,0 +1,42 @@
+name: Firm licence request
+description: Request a LabourLedger firm licence or a pilot audit.
+title: "LabourLedger licence / pilot request"
+labels: ["licence-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in LabourLedger. This is the zero-cost order channel while card checkout is being connected.
+
+        **Do not post client data, payroll data, card numbers, or passwords here.** We will reply with a secure payment link and next steps.
+  - type: input
+    id: firm
+    attributes:
+      label: CA / HR firm name
+      placeholder: Deshmukh & Associates
+    validations:
+      required: true
+  - type: dropdown
+    id: plan
+    attributes:
+      label: What do you want?
+      options:
+        - Pilot audit (3 free)
+        - Per-report licence (₹999)
+        - Firm licence (₹9,999/year)
+        - Question before buying
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What kind of clients do you audit?
+      description: A sentence helps us prioritize the right state/industry coverage.
+      placeholder: 40 SME manufacturing and IT clients in Pune and Mumbai.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand this issue is public and I have not included client or payment data.
+          required: true
